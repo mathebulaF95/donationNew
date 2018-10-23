@@ -1,0 +1,53 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Donation</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+ 
+  <h2>Online Assessment</h2><br><br>
+ 
+  <form [formGroup]="formgroup" (ngSubmit)="logIn(formgroup)">
+ <ion-list>
+    <ion-item id="input">
+        <ion-label  floating>Email</ion-label>
+        <ion-input  [class.invalid]="!formgroup.controls.email.valid && (formgroup.controls.email.dirty || submitAttempt)" formControlName="email" type="text" placeholder="Email"></ion-input>
+    </ion-item>
+   <ion-item *ngIf="formgroup.controls.email.pending">
+        <p>Checking email...</p>
+    </ion-item>
+   <ion-item *ngIf="!formgroup.controls.email.valid && !formgroup.controls.email.pending && (formgroup.controls.email.dirty || submitAttempt)">
+        <p>Sorry, that email can not be used!</p>
+    </ion-item>
+
+    <ion-item id="input" color="light">
+      <ion-label floating>Password</ion-label>
+      <ion-input [class.invalid]="!formgroup.controls.password.valid && (formgroup.controls.password.dirty || submitAttempt)" formControlName="password" type="password" placeholder="Password"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="formgroup.controls.password.pending">
+      <p>Checking password...</p>
+  </ion-item>
+  <ion-item *ngIf="!formgroup.controls.password.valid && !formgroup.controls.password.pending && (formgroup.controls.password.dirty || submitAttempt)">
+      <p>Sorry, that password can not be used!</p>
+  </ion-item>
+  </ion-list>
+ 
+   <p (click)="forget()">Forget Password</p>
+      
+  <div class="blue">
+    <button ion-button >LogIn</button>
+    </div>
+  </form>
+</ion-content>

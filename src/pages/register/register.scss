@@ -1,0 +1,35 @@
+.ios, .md {
+ 
+    page-home {
+ 
+        p {
+            font-size: 0.8em;
+            color: #d2d2d2;
+        }
+ 
+        ion-label, .select-text {
+            margin-left: 10px;
+        }
+ 
+        ion-input, ion-select, ion-textarea {
+            background-color: #f2f2f2;
+            padding: 5px 10px;
+        }
+ 
+        .invalid {
+            border: 1px solid #ea6153;
+        }
+ 
+    }
+ 
+}
+
+#input{
+    background-color:lavender !important;
+}
+
+.sub{
+    button{
+        background-color:rgb(135, 162, 250) !important;
+    }
+}
